@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} List Employees {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+{% include 'includes/header.html' %}
+<div class="">
+    <h3 >Employee list.</h3>
+</div>
+<!-- Start of search engine -->
+<div class="grid-x callout secondary align-center  ">
+    <div class="grid-x align-center ">
+      <ul class="menu ">
+        <li><input type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
+      </ul>
+    </div>
+</div>
+<!-- End of search engine -->
+<!-- Start of table -->
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th width="50">Id</th>
+            <th width="200">Name</th>
+            <th width="200">First Name</th>
+            <th width="200">Department</th>
+            <th width="200">Job</th>
+            <th width="50">Details</th>
+            <th width="50">Add</th>
+            <th width="50">Upgrade</th>
+            <th width="50">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+            {% for  p in peoples %}     
+                <tr>
+                    <td width="70" >{{p.id}}</td>
+                    <td width="70" >{{p.name}}</td>
+                    <td width="70" >{{p.first_name}}</td>
+                    <td width="70" >{{p.apart}}</td>
+                    <td width="70" >{{p.job}}</td>
+                    <td width="70" ><a href=""><img src="{% static 'img/8.jpg' %}" ></a></td>
+                    <td width="70" ><a href=""><img src="{% static 'img/5.jpg' %}" ></a></td>
+                    <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
+                    <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+<!-- End of table -->
+{% endblock blockBody %}  
