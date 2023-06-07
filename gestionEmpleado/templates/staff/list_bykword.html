@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} List Employees {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+
+    <div class="grid-x  align-center  " >
+        <div class="grid-x  align-center  large-9 smal-9 callout prymari" >
+            <table >
+                <thead>
+                <tr>
+                    <th width="200">Full Name</th>
+                    <th width="200">Department</th>
+                    <th width="200">Job</th>
+                    <th width="50">Details</th>
+                    <th width="50">Upgrade</th>
+                    <th width="50">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                    {% for  a in bykword %}     
+                        <tr>
+                            <td width="70" >{{a.full_name}}</td>
+                            <td width="70" >{{a.apart}}</td>
+                            <td width="70" >{{a.job}}</td>
+                            <td width="70" ><a href="{% url 'persona_app:People-detail' a.id %}"><img src="{% static 'img/8.jpg' %}" ></a></td>
+                            <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
+                            <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+{% endblock blockBody %}  
+

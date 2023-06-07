@@ -2,11 +2,9 @@
 
 {% load static %}
 
-{% block blockTitel %} List Employees {% endblock blockTitel %}
-    
+{% block blockTitel %} {% endblock blockTitel %}
 
 {% block blockBody %}
-
     <div class= ' callout primary'>
         <div class="grid-x align-center  subheader">
             <h3 >Employee List</h3>
@@ -21,7 +19,7 @@
                 </div>
             </form>
         </div>
-
+    
         <!-- End of search engine -->
         <!-- Start of table -->
         <div class="grid-x  align-center  " >
@@ -30,25 +28,21 @@
                     <thead>
                     <tr>
                         <th width="50">Id</th>
-                        <th width="200">Name</th>
-                        <th width="200">First Name</th>
-                        <th width="200">Department</th>
-                        <th width="200">Job</th>
+                        <th width="200">Oficina</th>
+                        <th width="200">Abbreviation</th>
                         <th width="50">Details</th>
                         <th width="50">Upgrade</th>
                         <th width="50">Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-
-                        {% for  p in peoples %}     
+    
+                        {% for  a in apart %}     
                             <tr>
-                                <td width="70" >{{p.id}}</td>
-                                <td width="70" >{{p.first_name}}</td>
-                                <td width="70" >{{p.last_name}}</td>
-                                <td width="70" >{{p.apart}}</td>
-                                <td width="70" >{{p.job}}</td>
-                                <td width="70" ><a href="{% url 'persona_app:People-detail' p.id %}"><img src="{% static 'img/8.jpg' %}" ></a></td>
+                                <td width="70" >{{a.id}}</td>
+                                <td width="70" >{{a.name}}</td>
+                                <td width="70" >{{a.short_name}}</td>
+                                <td width="70" ><a href="{% url 'persona_app:Apart-people' a.short_name %}">Staff</a></td>
                                 <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
                                 <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
                             </tr>
@@ -61,7 +55,7 @@
         <!-- End of table -->
         <!-- End of pagination -->
         <div>
-
+    
             {% if is_paginated %}
                 <nav aria-label="Pagination">
                     <ul class="pagination text-center">
@@ -79,23 +73,21 @@
                             {% else %}
                                 <li><a href="?page={{pag}}" aria-label="Page 2">{{pag}}</a></li>
                             {% endif %}
-
+    
                         {% endfor %}
-
+    
                         {% if page_obj.has_next %}
                             <li class="pagination-next ">
                                 <a href="?page={{page_obj.next_page_number}}" aria-label="Page 2"> Next</a>
                             </li>
                         {% endif %}
-
+    
                     </ul>
                 </nav>
             {% endif %}
-
+    
         </div>
         <!-- End of pagination -->
-
     </div>
-
-
+    
 {% endblock blockBody %}  

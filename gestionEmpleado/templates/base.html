@@ -10,9 +10,11 @@
     
 </head>
 <body>
+    {% include 'includes/header.html' %}
     {% block blockBody %}
         
-    {% endblock blockBody %} 
+    {% endblock blockBody %}
+    {% include 'includes/footer.html' %}
 
     <script src="{% static 'js/vendor/jquery.js' %}"></script>
     <script src="{% static 'js/vendor/what-input.js' %}"></script>

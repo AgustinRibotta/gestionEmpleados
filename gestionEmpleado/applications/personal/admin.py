@@ -18,18 +18,18 @@ class EmployeeModelAdmin(admin.ModelAdmin):
 
     list_display = (
         'id',
-        'name',
         'first_name',
+        'last_name',
         'apart',
         'full_name',
         )
     list_filter = ('apart',)
 
     def full_name(self,obj):
-        return obj.name  + ' ' + obj.first_name
+        return obj.first_name  + ' ' + obj.last_name
     
     search_fields = (
-        'name',
         'first_name',
+        'last_name',
     )
     filter_horizontal = ('skill',)

@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} List Employees {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+
+    {{detail.first_name}}
+    {{detail.last_name}}
+    {{detail.job}}
+    {{detail.apart}}
+    {{detail.cv}}
+    {{detail.full_name}}
+
+
+
+{% endblock blockBody %}  
+

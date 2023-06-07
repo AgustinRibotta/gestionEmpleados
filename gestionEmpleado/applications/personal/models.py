@@ -34,14 +34,16 @@ class EmployeeModel(models.Model):
 
     # TODO: Define fields here
 
-    name = models.CharField(
-        'Name', 
-        max_length=50,
-    )
+
     first_name = models.CharField(
         'First Name', 
         max_length=50,
     )
+    last_name = models.CharField(
+        'Last Name', 
+        max_length=50,
+    )
+
     job = models.CharField(
         'Position', 
         max_length=50
@@ -57,12 +59,18 @@ class EmployeeModel(models.Model):
         blank= True,
     )
     
+    @property
+    def full_name(self):
+        "Returns the person's full name."
+        return f"{self.first_name} {self.last_name}"
+    
     class Meta:
         """Meta definition for EmployeeModel."""
-
         verbose_name = 'Employee'
         verbose_name_plural = 'Employees'
 
+
     def __str__(self):
         """Unicode representation of EmployeeModel."""
-        return str(self.id) + ' ' + self.name + ' ' + self.first_name
+        return str(self.id) + ' ' + self.first_name + ' ' + self.last_name
+    
