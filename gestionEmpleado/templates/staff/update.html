@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} Upgrade People {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+<div class="grid-container">
+    <div class="grid-x">
+
+        <h1 class="cell">Upgrade People
+            
+        </h1>
+
+        <div class="cell">
+
+            <form method="POST">{% csrf_token %}
+                
+                {{form.first_name}}
+                {{form.last_name}}
+                {{form.job}}
+                {{form.apart}}
+                {{form.skill}}
+                {{form.cv}}
+                <div class="cell">
+                    <button class=" button" type="submit">Update</button> 
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock blockBody %}  
+

@@ -15,11 +15,6 @@ class ApartModel(models.Model):
         'Abbreviation', 
         max_length=50,
     )
-    anulate = models.BooleanField(
-        'Canceled',
-        default= False,
-    ),
-    
 
     
     class Meta:

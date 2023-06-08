@@ -9,7 +9,7 @@
 {% block blockBody %}
 
 
-    <div class="grid-x  align-center  " >
+    <div class="grid-x  align-center " >
         <div class="grid-x  align-center  large-9 smal-9 callout prymari" >
             <table >
                 <thead>
@@ -29,9 +29,9 @@
                             <td width="70" >{{a.full_name}}</td>
                             <td width="70" >{{a.apart}}</td>
                             <td width="70" >{{a.job}}</td>
-                            <td width="70" ><a href="{% url 'persona_app:People-detail' a.id %}"><img src="{% static 'img/8.jpg' %}" ></a></td>
-                            <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
-                            <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
+                            <td width="70" ><a href="{% url 'persona_app:People-detail' a.id %}">Detail</a></td>
+                            <td width="70" ><a href="">Upgrade</a></td>
+                            <td width="70" ><a href="">Delete</a></td>
                         </tr>
                     {% endfor %}
                     

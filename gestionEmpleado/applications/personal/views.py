@@ -3,8 +3,11 @@ from django.views.generic import (
     TemplateView, 
     ListView,
     DetailView,
+    UpdateView,
+    DeleteView,
+    CreateView,
 )
-
+from django.urls import reverse_lazy
 from .models import EmployeeModel
 
 
@@ -41,5 +44,44 @@ class PersonByKwordListView(ListView):
         )
         
         return people_apart
+    
+
+class PeopleUpdateView(UpdateView):
+    model = EmployeeModel
+    template_name = "staff/update.html"
+    fields = [
+        'first_name',
+        'last_name',
+        'job',
+        'apart',
+        'cv',
+        'skill',
+    ]
+    success_url = reverse_lazy ('persona_app:Peoples')
+    context_object_name = 'upgrade'
+    
+    
+
+
+
+class PeopleDeleteView(DeleteView):
+    model = EmployeeModel
+    template_name = "staff/delete.html"
+    success_url = reverse_lazy ('persona_app:Peoples')
+
+
+
+class PeopleCreateView(CreateView):
+    model = EmployeeModel
+    template_name = "staff/create.html"
+    fields =[
+        'first_name',
+        'last_name',
+        'job',
+        'apart',
+        'skill',
+        'cv',
+    ]
+    success_url = reverse_lazy ('persona_app:Peoples')
 
 

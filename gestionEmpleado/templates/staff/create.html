@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} Create People {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+<div class="grid-container">
+    <div class="grid-x">
+
+        <h1 class="cell">Upgrade People
+            
+        </h1>
+
+        <div class="cell">
+
+            <form method="POST">{% csrf_token %}
+                <p>First Name</p>
+                {{form.first_name}}
+                <p>Last Name</p>
+                {{form.last_name}}
+                <p>Job</p>
+                {{form.job}}
+                <p>Apartmen</p>
+                {{form.apart}}
+                <p>Skills</p>
+                {{form.skill}}
+                <p>CV</p>
+                {{form.cv}}
+                <div class="cell">
+                    <button class=" button" type="submit">Create</button> 
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock blockBody %}  
+

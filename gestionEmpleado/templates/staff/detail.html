@@ -3,19 +3,33 @@
 
 {% load static %}
 
-{% block blockTitel %} List Employees {% endblock blockTitel %}
+{% block blockTitel %} Detail Employees {% endblock blockTitel %}
     
 
 {% block blockBody %}
 
-
-    {{detail.first_name}}
-    {{detail.last_name}}
-    {{detail.job}}
-    {{detail.apart}}
-    {{detail.cv}}
-    {{detail.full_name}}
-
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="media-object">
+                <div class="media-object-section">
+                    <div class="thumbnail">
+                        <img src="assets/img/media-object/avatar-1.jpg">
+                    </div>
+                </div>
+                <div class="media-object-section">
+                    <h4>{{detail.full_name}}</h4>
+                    <h5>{{detail.job}}</h5>
+                    <h5>{{detail.ah5art}}</h5>
+                    <ul>
+                        {% for d in detail.skill.all %}
+                        <li>{{d}}</li>
+                        {% endfor %}
+                    </ul>
+                    <h5>{{detail.cv | safe}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock blockBody %}  

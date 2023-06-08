@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} delete Apartmens {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+    <div class="grid-container ">
+        <div class="grid-x">
+            <div class="cell callout secondary">
+
+                <div class=" cell">
+                    <h2  class="text-center">{{object.name}}</h5>
+                    <h2  class="text-center">Are you sure you want to delete?</h5>
+                    <h4  class="text-center" >Once this data is deleted, it cannot be recovered</h4>
+
+                    <form action="" method="POST">{% csrf_token %}
+                        
+                        <div class="cell ">
+                            
+                            <button class=" button align-spaced " type="submit">Yes, I'm sure.</button>
+                            <button class=" button align-spaced" type="submit"><a href="{% url 'persona_app:Peoples' %}" ></a>No, I don't want to delete.</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock blockBody %}  
+

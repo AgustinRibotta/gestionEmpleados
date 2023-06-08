@@ -20,4 +20,19 @@ urlpatterns = [
         PersonByKwordListView.as_view(),
         name='Apart-people'
     ),
+    path(
+        'upgrade-people/<pk>',
+        PeopleUpdateView.as_view(),
+        name='People-upgrade'
+    ),
+    path(
+        'delete-people/<pk>',
+        PeopleDeleteView.as_view(),
+        name='People-delete'
+    ),
+    path(
+        'create-people/',
+        PeopleCreateView.as_view(),
+        name='People-create'
+    ),
 ]

@@ -2,12 +2,12 @@
 
 {% load static %}
 
-{% block blockTitel %} {% endblock blockTitel %}
+{% block blockTitel %} Apartmens List{% endblock blockTitel %}
 
 {% block blockBody %}
-    <div class= ' callout primary'>
+    <div >
         <div class="grid-x align-center  subheader">
-            <h3 >Employee List</h3>
+            <h3 >Apartmens List</h3>
         </div>
         <!-- Start of search engine -->
         <div class="grid-x align-center " style="margin: 1%;">
@@ -43,8 +43,8 @@
                                 <td width="70" >{{a.name}}</td>
                                 <td width="70" >{{a.short_name}}</td>
                                 <td width="70" ><a href="{% url 'persona_app:Apart-people' a.short_name %}">Staff</a></td>
-                                <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
-                                <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
+                                <td width="70" ><a href="{% url 'departamento_app:Update-apart' a.id %}">Update</a></td>
+                                <td width="70" ><a href="{% url 'departamento_app:Delete-apart' a.id %}">Delete</a></td>
                             </tr>
                         {% endfor %}
                         

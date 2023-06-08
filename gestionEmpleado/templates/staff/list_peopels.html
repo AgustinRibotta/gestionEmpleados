@@ -7,7 +7,7 @@
 
 {% block blockBody %}
 
-    <div class= ' callout primary'>
+    <div >
         <div class="grid-x align-center  subheader">
             <h3 >Employee List</h3>
         </div>
@@ -48,9 +48,9 @@
                                 <td width="70" >{{p.last_name}}</td>
                                 <td width="70" >{{p.apart}}</td>
                                 <td width="70" >{{p.job}}</td>
-                                <td width="70" ><a href="{% url 'persona_app:People-detail' p.id %}"><img src="{% static 'img/8.jpg' %}" ></a></td>
-                                <td width="70" ><a href=""><img src="{% static 'img/6.jpg' %}" ></a></td>
-                                <td width="70" ><a href=""><img src="{% static 'img/7.jpg' %}" ></a></td>
+                                <td width="70" ><a href="{% url 'persona_app:People-detail' p.id %}">Detail</a></td>
+                                <td width="70" ><a href="{% url 'persona_app:People-upgrade' p.id %}">Upgrade</a></td>
+                                <td width="70" ><a href="{% url 'persona_app:People-delete' p.id %}">Delete</a></td>
                             </tr>
                         {% endfor %}
                         

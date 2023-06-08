@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blockTitel %} Upgrade Apartmens {% endblock blockTitel %}
+    
+
+{% block blockBody %}
+
+<div class="grid-container">
+    <div class="grid-x">
+
+        <h1 class="cell">Upgrade Apartaments
+            
+        </h1>
+
+        <div class="cell">
+
+            <form method="POST">{% csrf_token %}
+                
+                {{form.name}}
+                {{form.short_name}}
+
+                <div class="cell">
+                    <button class=" button" type="submit">Update</button> 
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock blockBody %}  
+
