@@ -29,3 +29,4 @@ class ApartModel(models.Model):
         """Unicode representation of Apartmen."""
         
         return self.name
+    

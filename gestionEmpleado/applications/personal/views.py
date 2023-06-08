@@ -13,7 +13,7 @@ from .models import EmployeeModel
 
 class PersonListView(ListView):
     template_name = "staff/list_peopels.html"
-    paginate_by = 10
+    paginate_by = 12
     context_object_name = 'peoples'
     
     def get_queryset(self):
@@ -56,6 +56,7 @@ class PeopleUpdateView(UpdateView):
         'apart',
         'cv',
         'skill',
+        'img',
     ]
     success_url = reverse_lazy ('persona_app:Peoples')
     context_object_name = 'upgrade'
@@ -81,6 +82,7 @@ class PeopleCreateView(CreateView):
         'apart',
         'skill',
         'cv',
+        'img',
     ]
     success_url = reverse_lazy ('persona_app:Peoples')
 

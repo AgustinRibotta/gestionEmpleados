@@ -1,5 +1,6 @@
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import *
 
 app_name = 'persona_app'
@@ -35,4 +36,4 @@ urlpatterns = [
         PeopleCreateView.as_view(),
         name='People-create'
     ),
-]
+] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

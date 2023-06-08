@@ -58,6 +58,13 @@ class EmployeeModel(models.Model):
     cv = RichTextField(
         blank= True,
     )
+    img = models.ImageField(
+        'Avatar', 
+        upload_to='people', 
+        blank= True,
+        null=True,
+
+    )
     
     @property
     def full_name(self):

@@ -13,18 +13,23 @@
             <div class="media-object">
                 <div class="media-object-section">
                     <div class="thumbnail">
-                        <img src="assets/img/media-object/avatar-1.jpg">
+                        <img width="300" height="300" src="{{ detail.img.url }}">
                     </div>
                 </div>
                 <div class="media-object-section">
+                    <h4 class="subheader">Name:</h4>
                     <h4>{{detail.full_name}}</h4>
+                    <h5 class="subheader">Job:</h5>
                     <h5>{{detail.job}}</h5>
-                    <h5>{{detail.ah5art}}</h5>
+                    <h5 class="subheader">Apartmens:</h5>
+                    <h5>{{detail.apart}}</h5>
+                    <h5 class="subheader">Skils:</h5>
                     <ul>
                         {% for d in detail.skill.all %}
                         <li>{{d}}</li>
                         {% endfor %}
                     </ul>
+                    <h5 class="subheader">Date:</h5>
                     <h5>{{detail.cv | safe}}</h5>
                 </div>
             </div>

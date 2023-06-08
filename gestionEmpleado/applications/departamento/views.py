@@ -14,7 +14,7 @@ from applications.departamento.models import ApartModel
 
 class ApartListView(ListView):
     template_name = "departamento/list_apart.html"
-    paginate_by = 10
+    paginate_by = 12
     context_object_name = 'apart'
     
     def get_queryset(self):

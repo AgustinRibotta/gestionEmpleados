@@ -17,7 +17,7 @@
 
         <div class="cell">
 
-            <form method="POST">{% csrf_token %}
+            <form method="POST" enctype="multipart/form-data" >{% csrf_token %}
                 
                 {{form.first_name}}
                 {{form.last_name}}
@@ -25,6 +25,7 @@
                 {{form.apart}}
                 {{form.skill}}
                 {{form.cv}}
+                {{form.img}}
                 <div class="cell">
                     <button class=" button" type="submit">Update</button> 
                 </div>
