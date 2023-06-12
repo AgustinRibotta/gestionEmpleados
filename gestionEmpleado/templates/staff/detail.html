@@ -12,9 +12,15 @@
         <div class="grid-x">
             <div class="media-object">
                 <div class="media-object-section">
-                    <div class="thumbnail">
-                        <img width="300" height="300" src="{{ detail.img.url }}">
-                    </div>
+                    {% if detail.img %}
+                        <div class="thumbnail">
+                            <img width="300" height="300" src="{{ detail.img.url }}">
+                        </div>
+                    {% else %}
+                        <div class="thumbnail">
+                            <img width="300" height="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmJACYPoJUcPJN9-3bshw0O2boYVLQJGuKAg&usqp=CAU">
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="media-object-section">
                     <h4 class="subheader">Name:</h4>

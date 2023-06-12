@@ -9,7 +9,7 @@
 {% block blockBody %}
 
     <div class="grid-container ">
-        <div class="grid-x">
+        <div class="grid-x allign-center">
             <div class="cell callout secondary">
 
                 <div class=" cell">
@@ -19,7 +19,7 @@
 
                     <form action="" method="POST">{% csrf_token %}
                         
-                        <div class="cell ">
+                        <div class="cell allign-center ">
                             
                             <button class=" button align-spaced " type="submit">Yes, I'm sure.</button>
                             <button class=" button align-spaced" type="submit"><a href="{% url 'persona_app:Peoples' %}" ></a>No, I don't want to delete.</button>
